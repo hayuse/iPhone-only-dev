@@ -14,9 +14,10 @@
     "react-dom": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
+    "@types/node": "22.14.1",
     "@types/react": "latest",
-    "@types/react-dom": "latest"
+    "@types/react-dom": "latest",
+    "typescript": "latest"
   },
   "license": "MIT"
 }

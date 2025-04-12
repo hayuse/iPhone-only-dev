@@ -4,7 +4,7 @@ import Camera from '../components/Camera';
 const Home = () => {
   const [redDetected, setRedDetected] = useState(false);
 
-  const handleDetectionResult = (result) => {
+  const handleDetectionResult = (result: boolean) => {
     setRedDetected(result);
   };
 
