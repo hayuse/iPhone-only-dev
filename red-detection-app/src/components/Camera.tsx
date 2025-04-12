@@ -1,6 +1,10 @@
 import React, { useRef, useState } from 'react';
 
-const Camera: React.FC = () => {
+interface CameraProps {
+    onDetectionResult: (result: boolean) => void;
+}
+
+const Camera: React.FC<CameraProps> = ({ onDetectionResult }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [imageSrc, setImageSrc] = useState<string | null>(null);
 
@@ -21,6 +25,10 @@ const Camera: React.FC = () => {
             const context = canvas.getContext('2d');
             context?.drawImage(videoRef.current, 0, 0);
             setImageSrc(canvas.toDataURL('image/png'));
+
+            // Simulate red detection logic
+            const redDetected = Math.random() > 0.5; // Replace with actual detection logic
+            onDetectionResult(redDetected);
         }
     };
 
